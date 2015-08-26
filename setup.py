@@ -29,11 +29,6 @@ setup/install script for after_hours
 """
 
 from distutils.core import setup
-import os
-
-directory = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(directory, 'README.rst')) as f:
-    LONG_DESCRIPTION = '\n' + f.read()
 
 setup(
     name='after_hours',
@@ -42,7 +37,6 @@ setup(
     author='Jason Lewris',
     author_email='datawrestler@gmail.com',
     description='retrieve after hours stock information from Nasdaq',
-    long_description=LONG_DESCRIPTION,
     url='https://github.com/datawrestler/after-hours',
     download_url='https://github.com/datawrestler/after-hours/tarball/0.1',
     keywords=['stocks', 'stockmarket', 'market', 'finance', 'nasdaq', 'afterhours', 'premarket', 'postmarket'],
@@ -65,6 +59,5 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Office/Business :: Financial :: Investment'
-    ]
+        'Topic :: Office/Business :: Financial :: Investment']
 )
