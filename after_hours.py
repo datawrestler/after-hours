@@ -313,7 +313,7 @@ def ah_all(stock_symbol):
         return stock_symbol, times, prices, volumes
     except:
         print("There was an error processing your request which could be due "
-              "to no pre-market data being available at this time")
+              "to no after-hours data being available at this time")
 
 
 # ah_avg returns the average after hours trading price
