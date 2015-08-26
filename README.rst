@@ -8,9 +8,9 @@ Python module after_hours can retrieve pre-market prices and after-hours trading
 
 -Created by Jason Lewris
 
--License: GNU LGPLv2+
+-License: The MIT License
 
--Developer Home Page: 'https://github.com/datawrestler <https://github.com/datawrestler>'_
+-Developer Home Page: 'https://github.com/datawrestler'_
 
 ----
 
