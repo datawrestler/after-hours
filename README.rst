@@ -10,14 +10,14 @@ Python module after_hours can retrieve pre-market prices and after-hours trading
 
 -License: The MIT License
 
--Developer Home Page: 'https://github.com/datawrestler'_
+-Developer Home Page: 'https://github.com/datawrestler'.
 
 ----
 
 
 Requirements
 --------------
-Python 2.7/3.4
+Python 2.7/3.4+
 
 Method Overview
 ----------------
@@ -69,7 +69,9 @@ Alternative installation can be done by downloading the source files directly fr
 
     .. code-block::
 
-        python setup.py
+        python setup.py install
+
+    .. note:: The source file can be downloaded here: https://github.com/datawrestler/after-hours/tarball/0.1
 
 
 After installation, the package is ready for use. Simply import it into your python script with the following:
