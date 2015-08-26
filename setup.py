@@ -43,8 +43,8 @@ setup(
     author_email='datawrestler@gmail.com',
     description='retrieve after hours stock information from Nasdaq',
     long_description=LONG_DESCRIPTION,
-    url='https://github.com/datawrestler/after_hours',
-    download_url='',
+    url='https://github.com/datawrestler/after-hours',
+    download_url='https://github.com/datawrestler/after-hours/tarball/0.1',
     keywords=['stocks', 'stockmarket', 'market', 'finance', 'nasdaq', 'afterhours', 'premarket', 'postmarket'],
     license='GNU LGPLv2+',
     classifiers=[
