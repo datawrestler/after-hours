@@ -16,7 +16,7 @@ __version__ = '1.1.0.dev1'
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
 # This file is part of after_hours.py
-# https://github.com/datawrestler/after_hours
+# https://github.com/datawrestler/after-hours
 #
 # THE  SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
