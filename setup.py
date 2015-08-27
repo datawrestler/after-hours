@@ -44,7 +44,7 @@ setup(
     url='https://github.com/datawrestler/after-hours',
     download_url='https://github.com/datawrestler/after-hours/tarball/0.1',
     keywords=['stocks', 'stockmarket', 'market', 'finance', 'nasdaq', 'afterhours', 'premarket', 'postmarket'],
-    license='GNU LGPLv2+',
+    license='The MIT License (MIT)',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
