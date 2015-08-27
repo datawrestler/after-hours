@@ -229,7 +229,6 @@ def ah_latest(stock_symbol):
     price = str(price)
     price = price[7:]
     price = price[:-2]
-    print(price)
     try:
         price = float(price)
         return stock_symbol, price
