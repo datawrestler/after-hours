@@ -36,7 +36,7 @@ with open('README.rst') as file:
 setup(
     name='after_hours',
     py_modules =['after_hours'],
-    version = '0.1.0',
+    version = '0.1.1',
     author='Jason Lewris',
     author_email='datawrestler@gmail.com',
     description='retrieve after hours stock information from Nasdaq',
