@@ -42,7 +42,7 @@ setup(
     description='retrieve after hours stock information from Nasdaq',
     long_description=long_description,
     url='https://github.com/datawrestler/after-hours',
-    download_url='https://github.com/datawrestler/after-hours/tarball/0.1',
+    download_url='https://github.com/datawrestler/after-hours/tarball/0.1.1',
     keywords=['stocks', 'stockmarket', 'market', 'finance', 'nasdaq', 'afterhours', 'premarket', 'postmarket'],
     license='The MIT License (MIT)',
     classifiers=[
