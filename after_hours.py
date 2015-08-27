@@ -43,7 +43,7 @@ def web_connect(stock_symbol, market):
     url = 'http://www.nasdaq.com/symbol/%s/%s' % (stock_symbol, market)
     req = Request(url)
     resp = urlopen(req)
-    response = resp.read().decode().strip()
+    response = resp.read().decode('utf-8').strip()
     tree = html.fromstring(response)
     return tree
 
