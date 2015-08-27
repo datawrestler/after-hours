@@ -31,7 +31,7 @@ Method Overview
                                     +--------------------------------------+--------------------------------------+
                                     |       pre_low                        | Returns low pre market price         |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_volume                     | Returns volume pre market price      |
+                                    |       pre_volume                     | Returns pre market volume info       |
                                     +--------------------------------------+--------------------------------------+
                                     |       pre_market_avg                 | Returns avg pre market prices        |
                                     +--------------------------------------+--------------------------------------+
