@@ -35,7 +35,7 @@ Method Overview
                                     +--------------------------------------+--------------------------------------+
                                     |       pre_market_avg                 | Returns avg pre market prices        |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_market_sse                 | pre market standard sqaure error     |
+                                    |       pre_market_sse                 | pre market standard square error     |
                                     +--------------------------------------+--------------------------------------+
                                     |       pre_market_sd                  | pre market standard deviation        |
                                     +--------------------------------------+--------------------------------------+
