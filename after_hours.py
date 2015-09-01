@@ -42,12 +42,12 @@ except ImportError:
 def web_connect(stock_symbol, market):
     """ Opens a web connection to a market with a stock_symbol
 
-        Params:
+        Pfarams:
             stock_symbol: NYSE et. al stock symbol
-            market:
+            market: which market chart should be returned
 
         Retruns:
-
+            tree: a tree containing the extracted html of the webpage response
     """
     url = 'http://www.nasdaq.com/symbol/%s/%s' % (stock_symbol, market)
     req = Request(url)
@@ -83,13 +83,15 @@ def pre_latest(stock_symbol):
 
 # pre_high method retrieves the highest pre-market price for given symbol
 def pre_high(stock_symbol):
-    """ returns the highest pre-market price for the given stock
+    """ Returns the highest pre-market price for the given stock
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
-
+            stock_symbol: Same as above
+            price: The premarket high price
+            time: The time at which the price occured
     """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'premarket')
@@ -113,16 +115,16 @@ def pre_high(stock_symbol):
         print("There is currently no pre-market data "
               "available for symbol %s" % stock_symbol)
 
-
-# This method retrieves the lowest pre-market trade price for given symbol
 def pre_low(stock_symbol):
-    """ Desc.
+    """ Retrieves the lowest pre-market trade price for given symbol
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
-
+            stock_symbol: Same as above
+            price: The premarket low price
+            time: The time at which the price occured
     """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'premarket')
@@ -148,15 +150,16 @@ def pre_low(stock_symbol):
               "available for symbol %s" % stock_symbol)
 
 
-# Method pre_volume returns the total volume for pre market trading for
-# given symbol
+
 def pre_volume(stock_symbol):
-    """ Desc.
+    """ Returns the total volume for pre market trading for given symbol
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            volume: the volume of trading for the given stock
 
     """
     stock_symbol = stock_symbol.lower()
@@ -173,15 +176,17 @@ def pre_volume(stock_symbol):
               "available for symbol %s" % stock_symbol)
 
 
-# This method retrieves all after-hours trading prices, times, and
-# volume for given symbol
 def pre_all(stock_symbol):
-    """ Desc.
+    """ Retrieves all after-hours trading prices, times, and volume data
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            price: The premarket prices
+            time: The time at which the price occured
+            volume: the volume of trading for the given stock
 
     """
     stock_symbol = stock_symbol.lower()
@@ -218,14 +223,15 @@ def pre_all(stock_symbol):
               "to no pre-market data being available at this time")
 
 
-# pre_market_avg return the average pre market trading price
 def pre_market_avg(stock_symbol):
-    """ Desc.
+    """ Calculates the average pre market trading price
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            average: the average pre market trading price
 
     """
     try:
@@ -242,14 +248,15 @@ def pre_market_avg(stock_symbol):
               "to no pre-market data being available at this time")
 
 
-# pre_market_sse returns the sum of square deviations for symbol
 def pre_market_sse(stock_symbol):
-    """ Desc.
+    """ Calculates the sum of square deviations for symbol
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            ss: sum of square deviations for symbol
 
     """
     try:
@@ -265,15 +272,15 @@ def pre_market_sse(stock_symbol):
               "to no pre-market data being available at this time")
 
 
-# pre_market_sd returns the standard deviation for pre-market
-# prices for symbol
 def pre_market_sd(stock_symbol):
-    """ Desc.
+    """ Calculates the standard deviation for pre-market prices for symbol
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            stdev: the standard deviation of the stock prices
 
     """
     try:
@@ -293,14 +300,15 @@ def pre_market_sd(stock_symbol):
               "to no pre-market data being available at this time")
 
 
-# This method obtains the current after-hours trade price for given symbol
 def ah_latest(stock_symbol):
-    """ Desc.
+    """ Obtains the current after-hours trade price for given symbol
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            price: the current after-hours price
 
     """
     stock_symbol = stock_symbol.lower()
@@ -318,14 +326,16 @@ def ah_latest(stock_symbol):
               'for symbol %s' % stock_symbol)
 
 
-# This method obtains the highest after-hours trade price for given symbol
 def ah_high(stock_symbol):
-    """ Desc.
+    """ Obtains the highest after-hours trade price for given symbol.
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            price: The after-hourse high price
+            time: The time at which the high occured
 
     """
     stock_symbol = stock_symbol.lower()
@@ -352,14 +362,16 @@ def ah_high(stock_symbol):
               "to no after-hours data being available at this time")
 
 
-# This method retrieves the lowest after-hours trade price for given symbol
 def ah_low(stock_symbol):
-    """ Desc.
+    """ Retrieves the lowest after-hours trade price for given symbol
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            price: The after-hourse low price
+            time: The time at which the low occured
 
     """
     stock_symbol = stock_symbol.lower()
@@ -384,14 +396,15 @@ def ah_low(stock_symbol):
               "to no after-hours data being available at this time")
 
 
-# This method retrieves the total after-hours volume for given symbol
 def ah_volume(stock_symbol):
-    """ Desc.
+    """ Retrieves the total after-hours volume for given symbol.
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            volume: the volume of trading for the given stock
 
     """
     stock_symbol = stock_symbol.lower()
@@ -408,15 +421,17 @@ def ah_volume(stock_symbol):
               "to no after-hours data being available at this time")
 
 
-# This method retrieves all after-hours trading prices, times, and
-# volume for given symbol
 def ah_all(stock_symbol):
-    """ Desc.
+    """ Retrieves all after-hours trading prices, times, and volume
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            price: The premarket prices
+            time: The time at which the price occured
+            volume: the volume of trading for the given stock
 
     """
     stock_symbol = stock_symbol.lower()
@@ -453,14 +468,15 @@ def ah_all(stock_symbol):
               "to no after-hours data being available at this time")
 
 
-# ah_avg returns the average after hours trading price
 def ah_avg(stock_symbol):
-    """ Desc.
+    """ Calculates the average after hours trading price
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            average: the average price after-hours
 
     """
     stock_symbol = stock_symbol.lower()
@@ -477,15 +493,16 @@ def ah_avg(stock_symbol):
               "to no after-hours data being available at this time")
 
 
-# ah_sse returns the sum of square deviations for symbol in after
-# hours trading
+
 def ah_sse(stock_symbol):
-    """ Desc.
+    """ Calculates the sum of square deviations for symbol in after-hours trading
 
         Params:
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            ss: sum of square deviations for symbol
 
     """
     stock_symbol = stock_symbol.lower()
@@ -510,6 +527,8 @@ def ah_sd(stock_symbol):
             stock_symbol: NYSE et. al stock symbol
 
         Retruns:
+            stock_symbol: Same as above
+            sd: the standard deviation in stock prices
 
     """
     stock_symbol = stock_symbol.lower()
