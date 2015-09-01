@@ -40,6 +40,15 @@ except ImportError:
 
 
 def web_connect(stock_symbol, market):
+    """ Opens a web connection to a market with a stock_symbol
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+            market:
+
+        Retruns:
+
+    """
     url = 'http://www.nasdaq.com/symbol/%s/%s' % (stock_symbol, market)
     req = Request(url)
     resp = urlopen(req)
@@ -50,6 +59,14 @@ def web_connect(stock_symbol, market):
 
 # Pre_current method retrieves the latest pre-market trade price for symbol
 def pre_latest(stock_symbol):
+    """ Get's the latest pre makert trade price
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Returns:
+            (stock_symbol, price: the stock's price)
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'premarket-chart')
     price = tree.xpath('//span[@id="quotes_content_left_lblLastsale"]/text()')
@@ -66,6 +83,14 @@ def pre_latest(stock_symbol):
 
 # pre_high method retrieves the highest pre-market price for given symbol
 def pre_high(stock_symbol):
+    """ returns the highest pre-market price for the given stock
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'premarket')
     price = tree.xpath('//span[@id="quotes_content_left_lblHighprice"]'
@@ -91,6 +116,14 @@ def pre_high(stock_symbol):
 
 # This method retrieves the lowest pre-market trade price for given symbol
 def pre_low(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'premarket')
     price = tree.xpath('//span[@id="quotes_content_left_lblLowprice"]'
@@ -118,6 +151,14 @@ def pre_low(stock_symbol):
 # Method pre_volume returns the total volume for pre market trading for
 # given symbol
 def pre_volume(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     try:
         tree = web_connect(stock_symbol, 'premarket')
@@ -135,6 +176,14 @@ def pre_volume(stock_symbol):
 # This method retrieves all after-hours trading prices, times, and
 # volume for given symbol
 def pre_all(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     times = []
     prices = []
@@ -171,6 +220,14 @@ def pre_all(stock_symbol):
 
 # pre_market_avg return the average pre market trading price
 def pre_market_avg(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     try:
         stock_symbol = stock_symbol.lower()
         test = pre_all(stock_symbol)
@@ -187,6 +244,14 @@ def pre_market_avg(stock_symbol):
 
 # pre_market_sse returns the sum of square deviations for symbol
 def pre_market_sse(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     try:
         stock_symbol = stock_symbol.lower()
         test = pre_all(stock_symbol)
@@ -203,6 +268,14 @@ def pre_market_sse(stock_symbol):
 # pre_market_sd returns the standard deviation for pre-market
 # prices for symbol
 def pre_market_sd(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     try:
         stock_symbol = stock_symbol.lower()
         test = pre_all(stock_symbol)
@@ -222,6 +295,14 @@ def pre_market_sd(stock_symbol):
 
 # This method obtains the current after-hours trade price for given symbol
 def ah_latest(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'after-hours-chart')
     price = tree.xpath('//span[@id="quotes_content_left_lblLastsale"]'
@@ -239,6 +320,14 @@ def ah_latest(stock_symbol):
 
 # This method obtains the highest after-hours trade price for given symbol
 def ah_high(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'after-hours')
     price = tree.xpath('//span[@id="quotes_content_left_lblHighprice"]'
@@ -265,6 +354,14 @@ def ah_high(stock_symbol):
 
 # This method retrieves the lowest after-hours trade price for given symbol
 def ah_low(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'after-hours')
     price = tree.xpath('//span[@id="quotes_content_left_lblLowprice"]'
@@ -289,6 +386,14 @@ def ah_low(stock_symbol):
 
 # This method retrieves the total after-hours volume for given symbol
 def ah_volume(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     tree = web_connect(stock_symbol, 'after-hours')
     try:
@@ -306,6 +411,14 @@ def ah_volume(stock_symbol):
 # This method retrieves all after-hours trading prices, times, and
 # volume for given symbol
 def ah_all(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     times = []
     prices = []
@@ -342,6 +455,14 @@ def ah_all(stock_symbol):
 
 # ah_avg returns the average after hours trading price
 def ah_avg(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     try:
         test = ah_all(stock_symbol)
@@ -359,6 +480,14 @@ def ah_avg(stock_symbol):
 # ah_sse returns the sum of square deviations for symbol in after
 # hours trading
 def ah_sse(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     try:
         test = ah_all(stock_symbol)
@@ -375,6 +504,14 @@ def ah_sse(stock_symbol):
 # ah_sd returns the standard deviation for prices in the
 # after hours market
 def ah_sd(stock_symbol):
+    """ Desc.
+
+        Params:
+            stock_symbol: NYSE et. al stock symbol
+
+        Retruns:
+
+    """
     stock_symbol = stock_symbol.lower()
     try:
         test = ah_all(stock_symbol)
