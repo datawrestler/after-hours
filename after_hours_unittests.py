@@ -40,7 +40,6 @@ class Pep8TestCase(unittest.TestCase):
         self.pep8style.check_files(files)
         self.assertEqual(self.pep8style.options.report.total_errors, 0)
 
-
 class AfterHoursTestCase(TestWithScenarios):
     # class AfterHoursTestCase tests the method ah_current
     # from after_hours
@@ -238,7 +237,7 @@ class AfterHoursTestCase(TestWithScenarios):
         # of aapl
         stock_symbol = 'aapl'
         test = after_hours.ah_high(stock_symbol)
-        self.assertEquals(test[0], 'aapl', msg='Test ah_high symbol failed')
+        self.assertEqual(test[0], 'aapl', msg='Test ah_high symbol failed')
 
     def test_ah_high_price(self):
         # method test_ah_high_price checks if value being returned from
@@ -252,7 +251,7 @@ class AfterHoursTestCase(TestWithScenarios):
         # ah_high time is not blank
         stock_symbol = 'aapl'
         test = after_hours.ah_high(stock_symbol)
-        self.assertNotEquals(test[2], '', msg='Test ah_high time failed')
+        self.assertNotEqual(test[2], '', msg='Test ah_high time failed')
 
     def test_ah_low_symbol(self):
         # method test_ah_low_symbol checks if the symbol value
@@ -260,21 +259,21 @@ class AfterHoursTestCase(TestWithScenarios):
         # used in unit test, aapl
         stock_symbol = 'aapl'
         test = after_hours.ah_low(stock_symbol)
-        self.assertEquals(test[0], 'aapl', msg='Test ah_low symbol failed')
+        self.assertEqual(test[0], 'aapl', msg='Test ah_low symbol failed')
 
     def test_ah_low_price(self):
         # method test_ah_low_price checks if value being returned
         # from ah_low is greater than 0 for price
         stock_symbol = 'aapl'
         test = after_hours.ah_low(stock_symbol)
-        self.assertNotEquals(test[1], '', msg='Test ah_low price failed')
+        self.assertNotEqual(test[1], '', msg='Test ah_low price failed')
 
     def test_ah_low_time(self):
         # method test_ah_low_time checks if the value returned
         # from ah_low is not blank
         stock_symbol = 'aapl'
         test = after_hours.ah_low(stock_symbol)
-        self.assertNotEquals(test[2], '', msg='Test ah_low time failed')
+        self.assertNotEqual(test[2], '', msg='Test ah_low time failed')
 
     def test_ah_volume_symbol(self):
         # method test_ah_volume_symbol checks if the symbol value
@@ -282,14 +281,14 @@ class AfterHoursTestCase(TestWithScenarios):
         # used in unit test, aapl
         stock_symbol = 'aapl'
         test = after_hours.ah_volume(stock_symbol)
-        self.assertEquals(test[0], 'aapl', msg='Test ah_volume symbol failed')
+        self.assertEqual(test[0], 'aapl', msg='Test ah_volume symbol failed')
 
     def test_ah_volume(self):
         # method test_ah_volume checks if the value being returned
         # from ah_volume is not blank
         stock_symbol = 'aapl'
         test = after_hours.ah_volume(stock_symbol)
-        self.assertNotEquals(test[1], '', msg='Test ah_volume volume failed')
+        self.assertNotEqual(test[1], '', msg='Test ah_volume volume failed')
 
     def test_ah_all_symbol(self):
         # method test_ah_all_symbol checks if the symbol value
@@ -297,7 +296,7 @@ class AfterHoursTestCase(TestWithScenarios):
         # used in unittest, aapl
         stock_symbol = 'aapl'
         test = after_hours.ah_all(stock_symbol)
-        self.assertEquals(test[0], 'aapl', msg='Test ah_all symbol failed')
+        self.assertEqual(test[0], 'aapl', msg='Test ah_all symbol failed')
 
     def test_ah_all_time(self):
         # method test_ah_all_time checks if the time value
@@ -305,10 +304,8 @@ class AfterHoursTestCase(TestWithScenarios):
         # yhoo for testing
         stock_symbol = 'yhoo'
         test = after_hours.ah_all(stock_symbol)
-        test1 = test[1]
-        test2 = test[0]
         test3 = str(test)
-        self.assertNotEquals(test3, '', msg='Test ah_all time failed')
+        self.assertNotEqual(test3, '', msg='Test ah_all time failed')
 
     def test_ah_all_price(self):
         # method test_ah_all_price checks if the price value
@@ -328,7 +325,7 @@ class AfterHoursTestCase(TestWithScenarios):
         test1 = test[3]
         test2 = test1[0]
         test3 = str(test2)
-        self.assertNotEquals(test3, '', msg='Test ah_all volume failed')
+        self.assertNotEqual(test3, '', msg='Test ah_all volume failed')
 
     def test_ah_avg_symbol(self):
         # method ah_avg_symbol checks if the symbol value
