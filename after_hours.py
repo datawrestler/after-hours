@@ -113,6 +113,7 @@ def pre_high(stock_symbol):
         print("There is currently no pre-market data "
               "available for symbol %s" % stock_symbol)
 
+
 def pre_low(stock_symbol):
     """ Retrieves the lowest pre-market trade price for given symbol
 
@@ -146,7 +147,6 @@ def pre_low(stock_symbol):
     except:
         print("There is currently no pre-market data "
               "available for symbol %s" % stock_symbol)
-
 
 
 def pre_volume(stock_symbol):
@@ -489,7 +489,6 @@ def ah_avg(stock_symbol):
     except:
         print("there was an error processing your request which could be due "
               "to no after-hours data being available at this time")
-
 
 
 def ah_sse(stock_symbol):

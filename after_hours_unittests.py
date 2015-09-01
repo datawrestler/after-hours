@@ -40,6 +40,7 @@ class Pep8TestCase(unittest.TestCase):
         self.pep8style.check_files(files)
         self.assertEqual(self.pep8style.options.report.total_errors, 0)
 
+
 class AfterHoursTestCase(TestWithScenarios):
     # class AfterHoursTestCase tests the method ah_current
     # from after_hours
