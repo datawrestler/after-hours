@@ -31,12 +31,10 @@ __version__ = '0.1.1'
 
 try:
     from urllib.request import Request, urlopen
-    from urllib.parse import urlencode
     from lxml import html
 except ImportError:
     from urllib2 import Request, urlopen
     from lxml import html
-    from urllib import urlencode
 
 
 def web_connect(stock_symbol, market):
@@ -238,11 +236,11 @@ def pre_market_avg(stock_symbol):
         stock_symbol = stock_symbol.lower()
         test = pre_all(stock_symbol)
         test = test[2]
-        n = len(test)
-        if n < 1:
+        price_count = len(test)
+        if price_count < 1:
             raise ValueError("Calculating the mean requires "
                              "at least one data point")
-        return stock_symbol, sum(test) / n
+        return stock_symbol, sum(test) / price_count
     except:
         print("there was an error processing your request which could be due "
               "to no pre-market data being available at this time")
@@ -256,17 +254,17 @@ def pre_market_sse(stock_symbol):
 
         Retruns:
             stock_symbol: Same as above
-            ss: sum of square deviations for symbol
+            sum_of_squares: sum of square deviations for symbol
 
     """
     try:
         stock_symbol = stock_symbol.lower()
-        test = pre_all(stock_symbol)
-        test = test[2]
+        premarket_prices = pre_all(stock_symbol)
+        premarket_prices = premarket_prices[2]
         mean = pre_market_avg(stock_symbol)
         mean = mean[1]
-        ss = sum((x-mean)**2 for x in test)
-        return stock_symbol, ss
+        sum_of_squares = sum((price-mean)**2 for price in premarket_prices)
+        return stock_symbol, sum_of_squares
     except:
         print("there was an error processing your request which could be due "
               "to no pre-market data being available at this time")
@@ -287,13 +285,13 @@ def pre_market_sd(stock_symbol):
         stock_symbol = stock_symbol.lower()
         test = pre_all(stock_symbol)
         test = test[2]
-        n = len(test)
-        if n < 2:
+        price_count = len(test)
+        if price_count < 2:
             raise ValueError("To calculate variance you need at "
                              "least two data points")
-        ss = pre_market_sse(stock_symbol)
-        ss = ss[1]
-        pop_var = ss / n
+        sum_of_squares = pre_market_sse(stock_symbol)
+        sum_of_squares = sum_of_squares[1]
+        pop_var = sum_of_squares / price_count
         return stock_symbol, pop_var**0.5
     except:
         print("there was an error processing your request which could be due "
@@ -481,13 +479,13 @@ def ah_avg(stock_symbol):
     """
     stock_symbol = stock_symbol.lower()
     try:
-        test = ah_all(stock_symbol)
-        test = test[2]
-        n = len(test)
-        if n < 1:
+        aftermarket_prices = ah_all(stock_symbol)
+        aftermarket_prices = aftermarket_prices[2]
+        price_count = len(aftermarket_prices)
+        if price_count < 1:
             raise ValueError("Calculating the mean requires "
                              "at least one data point")
-        return stock_symbol, sum(test) / n
+        return stock_symbol, sum(aftermarket_prices) / price_count
     except:
         print("there was an error processing your request which could be due "
               "to no after-hours data being available at this time")
@@ -502,17 +500,17 @@ def ah_sse(stock_symbol):
 
         Retruns:
             stock_symbol: Same as above
-            ss: sum of square deviations for symbol
+            sum_of_squares: sum of square deviations for symbol
 
     """
     stock_symbol = stock_symbol.lower()
     try:
-        test = ah_all(stock_symbol)
-        test = test[2]
+        aftermarket_prices = ah_all(stock_symbol)
+        aftermarket_prices = aftermarket_prices[2]
         mean = ah_avg(stock_symbol)
         mean = mean[1]
-        ss = sum((x-mean)**2 for x in test)
-        return stock_symbol, ss
+        sum_of_squares = sum((x-mean)**2 for x in aftermarket_prices)
+        return stock_symbol, sum_of_squares
     except:
         print("there was an error processing your request which could be due "
               "to no after-hours data being available at this time")
@@ -533,15 +531,15 @@ def ah_sd(stock_symbol):
     """
     stock_symbol = stock_symbol.lower()
     try:
-        test = ah_all(stock_symbol)
-        test = test[2]
-        n = len(test)
-        if n < 2:
+        aftermarket_prices = ah_all(stock_symbol)
+        aftermarket_prices = aftermarket_prices[2]
+        price_count = len(aftermarket_prices)
+        if price_count < 2:
             raise ValueError("To calculate variance you need at "
                              "least two data points")
-        ss = ah_sse(stock_symbol)
-        ss = ss[1]
-        pop_var = ss / n
+        sum_of_squares = ah_sse(stock_symbol)
+        sum_of_squares = sum_of_squares[1]
+        pop_var = sum_of_squares / price_count
         return stock_symbol, pop_var**0.5
     except:
         print("there was an error processing your request which could be due "
