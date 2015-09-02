@@ -1,6 +1,10 @@
 language: python
 notifications:
   email: false
+before_install:
+  - sudo apt-get pip
+  - pip install lxml
+  - pip install urllib
 branches:
   only:
     - master
