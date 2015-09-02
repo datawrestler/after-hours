@@ -5,7 +5,6 @@ before_install:
   - sudo apt-get install python-pip python-dev build-essential
   - sudo pip install --upgrade pip
   - pip install lxml
-  - pip install urllib
 branches:
   only:
     - master
