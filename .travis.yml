@@ -2,7 +2,8 @@ language: python
 notifications:
   email: false
 before_install:
-  - sudo apt-get pip
+  - sudo apt-get install python-pip python-dev build-essential
+  - sudo pip install --upgrade pip
   - pip install lxml
   - pip install urllib
 branches:
