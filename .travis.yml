@@ -4,7 +4,7 @@ notifications:
 before_install:
   - sudo apt-get install python-pip python-dev build-essential
   - sudo pip install --upgrade pip
-  - pip install lxml
+  - sudo pip install lxml
 branches:
   only:
     - master
