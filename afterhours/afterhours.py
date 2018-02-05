@@ -3,7 +3,7 @@
 
 __author__ = "Jason Lewris"
 __license__ = "MIT"
-__version__ = "0.1.1"
+__version__ = "0.2.1"
 __maintainer__ = "Jason Lewris"
 __email__ = "datawrestler@gmail.com"
 __status__ = "Beta"
@@ -174,8 +174,8 @@ class AfterHours(object):
 if __name__ == '__main__':
 
     AH = AfterHours('nflx', typeof = 'after')
-    AH.getdata(datatype='low')
-    AH.getdata(datatype='high')
+    AH.getdata(datatype='lowprice')
+    AH.getdata(datatype='highprice')
     AH.getdata(datatype='volume')
     AH.getdata(datatype='hightime')
     AH.getdata(datatype='lowtime')

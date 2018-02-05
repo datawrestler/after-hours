@@ -25,17 +25,17 @@ Method Overview
                                     +--------------------------------------+--------------------------------------+
                                     |       Method Name                    |          Description                 |
                                     +======================================+======================================+
-                                    |       AH.high()                      | Returns high market price            |
+                                    |       AH.getdata(datatype='highprice)| Returns high market price            |
                                     +--------------------------------------+--------------------------------------+
-                                    |       AH.low()                       | Returns low market price             |
+                                    |       AH.getdata(datatype='lowprice')| Returns low market price             |
                                     +--------------------------------------+--------------------------------------+
-                                    |       AH.volume()                    | Returns total market volume          |
+                                    |       AH.getdata(datatype='volume')  | Returns total market volume          |
                                     +--------------------------------------+--------------------------------------+
-                                    |       AH.hightime()                  | Returns datetime of high price       |
+                                    |       AH.getdata(datatype='hightime')| Returns datetime of high price       |
                                     +--------------------------------------+--------------------------------------+
-                                    |       AH.lowtime()                   | Returns datetime of low price        |
+                                    |       AH.getdata(datatype='lowtime') | Returns datetime of low price        |
                                     +--------------------------------------+--------------------------------------+
-                                    |       AH.mkt_close()                 | Returns market close price           |
+                                    |       AH.getdata(datatype='mktclose')| Returns market close price           |
                                     +--------------------------------------+--------------------------------------+
                                     |       AH.secure_all()                | Returns dataframe with all activity  |
                                     +--------------------------------------+--------------------------------------+
@@ -50,7 +50,7 @@ Installation is done using pip install:
 
     .. code-block::
 
-        pip install after_hours
+        pip install afterhours
 
 Alternative installation can be done by downloading the source files directly from github, navigating to the directory through terminal and running the following:
 
@@ -75,17 +75,17 @@ Examples
 
 
 from afterhours import after_hours
-        >>> AH = AfterHours('aapl', typeof = 'pre')
-        >>> print(AH.high())
+        >>> AH = AfterHours('aapl', typeof = 'after')
+        >>> print(AH.getdata(datatype='lowprice'))
                 102.18
 
-        >>> print(AH.low())
+        >>> print(AH.getdata(datatype='highprice'))
             109.055
 
-        >>> print(AH.hightime())
+        >>> print(AH.getdata(datatype='hightime'))
             '12/15/2017 18:58:46 PM'
 
-        >>> print(AH.lowtime())
+        >>> print(AH.getdata(datatype='lowtime'))
             '12/15/2017 19:58:46 PM'
 
         >>> print(AH.secure_all())
@@ -96,17 +96,17 @@ from afterhours import after_hours
 
 
 
-        >>> AH = AfterHours('aapl', typeof = 'pre')
-        >>> print(AH.high())
+        >>> AH = AfterHours('aapl', typeof='pre')
+        >>> print(AH.getdata(datatype='lowprice'))
                 102.18
 
-        >>> print(AH.low())
+        >>> print(AH.getdata(datatype='highprice'))
             109.055
 
-        >>> print(AH.hightime())
+        >>> print(AH.getdata(datatype='lowtime'))
             '12/15/2017 18:58:46 PM'
 
-        >>> print(AH.lowtime())
+        >>> print(AH.getdata(datatype='hightime'))
             '12/15/2017 19:58:46 PM'
 
         >>> print(AH.secure_all())
