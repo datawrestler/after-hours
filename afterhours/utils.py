@@ -67,10 +67,21 @@ class Settings(object):
 
 
 def filter_data(data):
+    """
+    filter ordinals from string greater than 128
+    :param data: original input string data
+    :return: filtered string
+    """
     return ''.join(list(filter(lambda x: ord(x) <= 128, data)))
 
 
 def formatoutput(output, outtype='date'):
+    """
+    format nasdaq datapoints to desired level - format dates, convert prices to numeric, etc.
+    :param output: output data
+    :param outtype: type of formatting
+    :return: formatted data point
+    """
     assert outtype in ['date', 'price', 'volume'], """formatout only supports date, price, volume
                                                         \nUnsupported: {}""".format(outtype)
 
