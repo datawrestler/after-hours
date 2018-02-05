@@ -1,0 +1,25 @@
+# specify language
+language: python
+
+notifications:
+  email: false
+
+# specify install instructions
+install:
+  - pip install -r requirements.txt
+
+# python supported versions
+python:
+  - "2.6"
+  - "2.7"
+  - "3.5"
+  - "3.6"
+
+# specify branches
+branches:
+  only:
+    - master
+
+# run script
+script:
+  - cd afterhours/tests && python tests.py

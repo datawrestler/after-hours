@@ -25,36 +25,23 @@ Method Overview
                                     +--------------------------------------+--------------------------------------+
                                     |       Method Name                    |          Description                 |
                                     +======================================+======================================+
-                                    |       pre_latest                     | Returns latest pre market price      |
+                                    |       AH.high()                      | Returns high market price            |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_high                       | Returns high pre market price        |
+                                    |       AH.low()                       | Returns low market price             |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_low                        | Returns low pre market price         |
+                                    |       AH.volume()                    | Returns total market volume          |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_volume                     | Returns pre market volume info       |
+                                    |       AH.hightime()                  | Returns datetime of high price       |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_market_avg                 | Returns avg pre market prices        |
+                                    |       AH.lowtime()                   | Returns datetime of low price        |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_market_sse                 | pre market standard square error     |
+                                    |       AH.mkt_close()                 | Returns market close price           |
                                     +--------------------------------------+--------------------------------------+
-                                    |       pre_market_sd                  | pre market standard deviation        |
+                                    |       AH.secure_all()                | Returns dataframe with all activity  |
                                     +--------------------------------------+--------------------------------------+
-                                    |       ah_latest                      | Returns latest after hours price     |
+                                    |       AH.run_every()                 | Updates all data points continuosly  |
                                     +--------------------------------------+--------------------------------------+
-                                    |       ah_high                        | Returns high after hours price       |
-                                    +--------------------------------------+--------------------------------------+
-                                    |       ah_low                         | Returns low after hours price        |
-                                    +--------------------------------------+--------------------------------------+
-                                    |       ah_volume                      | Returns after hours volume           |
-                                    +--------------------------------------+--------------------------------------+
-                                    |       ah_all                         | Returns all after hours prices       |
-                                    +--------------------------------------+--------------------------------------+
-                                    |       ah_avg                         | Returns after hours average price    |
-                                    +--------------------------------------+--------------------------------------+
-                                    |       ah_sse                         | After hours standard sqaure error    |
-                                    +--------------------------------------+--------------------------------------+
-                                    |       ah_sd                          | After hours standard deviation       |
-                                    +--------------------------------------+--------------------------------------+
+
 
 Installation
 **************
@@ -86,30 +73,44 @@ Examples
 
     .. code-block::
 
-        >>> import after_hours
-        >>> print(after_hours.ah_latest('aapl'))
-            ('aapl', 102.18)
 
-        >>> print(after_hours.ah_high('aapl'))
-            ('aapl', 109.055, '16:09:59 PM')
+from afterhours import after_hours
+        >>> AH = AfterHours('aapl', typeof = 'pre')
+        >>> print(AH.high())
+                102.18
 
-        >>> print(after_hours.ah_low('aapl'))
-            ('aapl', 102.1, '19:58:46 PM')
+        >>> print(AH.low())
+            109.055
 
-        >>> print(after_hours.ah_volume('aapl'))
-            ('aapl', '2,140,117')
+        >>> print(AH.hightime())
+            '12/15/2017 18:58:46 PM'
 
-        >>> print(after_hours.ah_all('aapl'))
-            ('aapl', ['19:59', '19:57', '19:53'], [102.18, 102.16, 102.11], ['100', '10', '10']
+        >>> print(AH.lowtime())
+            '12/15/2017 19:58:46 PM'
 
-        >>> print(after_hours.ah_avg('aapl'))
-            ('aapl', 102.22793048
+        >>> print(AH.secure_all())
+            Pandas DataFrame
 
-        >>> print(after_hours.ah_sse('aapl'))
-            ('aapl', 0.572312)
 
-        >>> print(after_hours.ah_sd('aapl'))
-            ('aapl', 0.0835429)
+
+
+
+
+        >>> AH = AfterHours('aapl', typeof = 'pre')
+        >>> print(AH.high())
+                102.18
+
+        >>> print(AH.low())
+            109.055
+
+        >>> print(AH.hightime())
+            '12/15/2017 18:58:46 PM'
+
+        >>> print(AH.lowtime())
+            '12/15/2017 19:58:46 PM'
+
+        >>> print(AH.secure_all())
+            Pandas DataFrame
 
 
 

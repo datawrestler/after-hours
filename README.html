@@ -364,50 +364,29 @@ ul.auto-toc {
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>pre_latest</td>
-<td>Returns latest pre market price</td>
-</tr>
-<tr><td>pre_high</td>
-<td>Returns high pre market price</td>
-</tr>
-<tr><td>pre_low</td>
-<td>Returns low pre market price</td>
-</tr>
-<tr><td>pre_volume</td>
-<td>Returns volume pre market price</td>
-</tr>
-<tr><td>pre_market_avg</td>
-<td>Returns avg pre market prices</td>
-</tr>
-<tr><td>pre_market_sse</td>
-<td>pre market standard sqaure error</td>
-</tr>
-<tr><td>pre_market_sd</td>
-<td>pre market standard deviation</td>
-</tr>
-<tr><td>ah_latest</td>
-<td>Returns latest after hours price</td>
-</tr>
-<tr><td>ah_high</td>
+<tr><td>high</td>
 <td>Returns high after hours price</td>
 </tr>
-<tr><td>ah_low</td>
+<tr><td>low</td>
 <td>Returns low after hours price</td>
 </tr>
-<tr><td>ah_volume</td>
-<td>Returns after hours volume</td>
+<tr><td>volume</td>
+<td>Returns volume of after hours activity</td>
 </tr>
-<tr><td>ah_all</td>
-<td>Returns all after hours prices</td>
+<tr><td>hightime</td>
+<td>Returns time stamp of highest after hours trade</td>
 </tr>
-<tr><td>ah_avg</td>
-<td>Returns after hours average price</td>
+<tr><td>lowtime</td>
+<td>Returns time stamp of lowest after hours trade</td>
 </tr>
-<tr><td>ah_sse</td>
-<td>After hours standard sqaure error</td>
+<tr><td>mkt_close</td>
+<td>Returns market close price for ticker symbol</td>
 </tr>
-<tr><td>ah_sd</td>
-<td>After hours standard deviation</td>
+<tr><td>secure_all_pages</td>
+<td>Captures all after hours trading data for stock symbol</td>
+</tr>
+<tr><td>run_every</td>
+<td>Secure all price points every N seconds</td>
 </tr>
 </tbody>
 </table>
@@ -433,7 +412,7 @@ python setup.py install
 <p>After installation, the package is ready for use. Simply import it into your python script with the following:</p>
 <blockquote>
 <pre class="code literal-block">
-import after_hours
+from after_hours import AfterHours
 </pre>
 </blockquote>
 </div>
@@ -442,7 +421,7 @@ import after_hours
 <h1>Examples</h1>
 <blockquote>
 <pre class="code literal-block">
-&gt;&gt;&gt; import after_hours
+&gt;&gt;&gt; from after_hours import AfterHours
 &gt;&gt;&gt; print(after_hours.ah_latest('aapl'))
     ('aapl', 102.18)
 

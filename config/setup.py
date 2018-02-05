@@ -12,7 +12,7 @@
 #
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
-# This file is part of after_hours.py
+# This file is part of afterhours.py
 # https://github.com/datawrestler/after-hours
 #
 # THE  SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -42,7 +42,7 @@ setup(
     description='retrieve after hours stock information from Nasdaq',
     long_description=long_description,
     url='https://github.com/datawrestler/after-hours',
-    download_url='https://github.com/datawrestler/after-hours/tarball/0.1.1',
+    download_url='https://github.com/datawrestler/after-hours/tarball/1.1.0',
     keywords=['stocks', 'stockmarket', 'market', 'finance', 'nasdaq', 'afterhours', 'premarket', 'postmarket'],
     license='The MIT License (MIT)',
     classifiers=[
