@@ -1,10 +1,10 @@
 
 
 ********************************
-Read me for after_hours module
+Read me for afterhours module
 ********************************
 
-Python module after_hours can retrieve pre-market prices and after-hours trading prices from Nasdaq for a given stock symbol
+Python module afterhours can retrieve pre-market prices and after-hours trading prices from Nasdaq for a given stock symbol
 
 -Created by Jason Lewris
 
@@ -65,7 +65,7 @@ After installation, the package is ready for use. Simply import it into your pyt
 
     .. code-block::
 
-        import after_hours
+        from afterhours.afterhours import AfterHours
 
 
 Examples
@@ -74,7 +74,7 @@ Examples
     .. code-block::
 
 
-from afterhours import after_hours
+from afterhours.afterhours import AfterHours
         >>> AH = AfterHours('aapl', typeof = 'after')
         >>> print(AH.getdata(datatype='lowprice'))
                 102.18
