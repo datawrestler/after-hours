@@ -1,15 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__author__ = "Jason Lewris"
-__license__ = "MIT"
-__version__ = "0.2.1"
-__maintainer__ = "Jason Lewris"
-__email__ = "datawrestler@gmail.com"
-__status__ = "Beta"
 
 import unittest
-import datetime
 
 import afterhours.utils as utils
 
