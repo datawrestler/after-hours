@@ -1,6 +1,18 @@
 .. image:: https://travis-ci.org/datawrestler/after-hours.svg?branch=master
     :target: https://travis-ci.org/datawrestler/after-hours
 
+.. image:: https://badge.fury.io/py/afterhours.svg
+    :target: https://badge.fury.io/py/afterhours
+
+.. |Python27| image:: https://img.shields.io/badge/python-2.7-blue.svg
+.. _Python27: https://badge.fury.io/py/afterhours
+
+.. |Python35| image:: https://img.shields.io/badge/python-3.5-blue.svg
+.. _Python35: https://badge.fury.io/py/afterhours
+
+.. |Python36| image:: https://img.shields.io/badge/python-3.6-blue.svg
+.. _Python36: https://badge.fury.io/py/afterhours
+
 ********************************
 Read me for afterhours module
 ********************************
