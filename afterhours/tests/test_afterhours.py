@@ -61,8 +61,8 @@ class AfterHoursTestCase(unittest.TestCase):
     def test_volume_(self):
         # method test_pre_volume_symbol checks if the symbol
         # being returned from pre_volume is accurate
-        test = self.afterhours.getdata(datatype='volume').replace(',', '')
-        self.assertIn(type(test), [str, float],
+        test = self.afterhours.getdata(datatype='volume') #.replace(',', '')
+        self.assertIn(type(test), [str, float, int],
                       msg='Afte tests volume failed with {}'.format(test))
 
     def test_cur_date_month(self):

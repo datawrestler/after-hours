@@ -1,4 +1,5 @@
-
+.. image:: https://travis-ci.org/datawrestler/after-hours.svg?branch=master
+    :target: https://travis-ci.org/datawrestler/after-hours
 
 ********************************
 Read me for afterhours module
