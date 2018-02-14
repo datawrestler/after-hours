@@ -4,7 +4,12 @@
 
 import unittest
 
-from afterhours.afterhours import AfterHours
+try:
+    import sys
+    sys.path.insert(0, "/home/travis/build/Data4Gov/WhiteBox_Production")
+    from afterhours.afterhours import AfterHours
+except:
+    from afterhours.afterhours import AfterHours
 
 
 class AfterHoursTestCase(unittest.TestCase):
