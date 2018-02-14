@@ -80,6 +80,16 @@ After installation, the package is ready for use. Simply import it into your pyt
 
         from afterhours.afterhours import AfterHours
 
+Dependencies
+~~~~~~~~~~~~
+
+scikit-learn requires:
+
+- beautifulsoup4 (>= 4.6.0)
+- requests (>= 2.18.4)
+- pandas (>= 0.20.3)
+- lxml (>= 4.1.0)
+
 
 Examples
 ---------
@@ -125,7 +135,13 @@ from afterhours.afterhours import AfterHours
         >>> print(AH.secure_all())
             Pandas DataFrame
 
+Source code
+~~~~~~~~~~~
 
+You can check the latest sources with the command::
 
+    https://github.com/datawrestler/after-hours.git
+
+a
 
 
