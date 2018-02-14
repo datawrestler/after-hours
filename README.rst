@@ -85,48 +85,52 @@ After installation, the package is ready for use. Simply import it into your pyt
 Examples
 ---------
 
-    .. code-block::
+.. code-block:: python
+
+        from afterhours.afterhours import AfterHours
+        AH = AfterHours('aapl', typeof = 'after')
+
+        # get the low price from after hours trading
+        print(AH.getdata(datatype='lowprice'))
+        # 102.18
+
+        # get the high price of after hours trading
+        print(AH.getdata(datatype='highprice'))
+        # 109.055
+
+        # get the timestamp of after hours high trade
+        print(AH.getdata(datatype='hightime'))
+        # '12/15/2017 18:58:46 PM'
 
 
-from afterhours.afterhours import AfterHours
-        >>> AH = AfterHours('aapl', typeof = 'after')
-        >>> print(AH.getdata(datatype='lowprice'))
-                102.18
+        print(AH.getdata(datatype='lowtime'))
+        # '12/15/2017 19:58:46 PM'
 
-        >>> print(AH.getdata(datatype='highprice'))
-            109.055
+        # get all data points for after hours trading
+        print(AH.secure_all())
+        # Pandas DataFrame
 
-        >>> print(AH.getdata(datatype='hightime'))
-            '12/15/2017 18:58:46 PM'
+        # get pre hours trading info for apple
+        AH = AfterHours('aapl', typeof='pre')
+        # get the low price from pre hours trading
+        print(AH.getdata(datatype='lowprice'))
+        # 102.18
 
-        >>> print(AH.getdata(datatype='lowtime'))
-            '12/15/2017 19:58:46 PM'
+        # get the high price from pre hours trading
+        print(AH.getdata(datatype='highprice'))
+        # 109.055
 
-        >>> print(AH.secure_all())
-            Pandas DataFrame
+        # get the timestamp for lowest trade
+        print(AH.getdata(datatype='lowtime'))
+        # '12/15/2017 18:58:46 PM'
 
+        # get the timestamp for highest time trade
+        print(AH.getdata(datatype='hightime'))
+        # '12/15/2017 19:58:46 PM'
 
+        # secure all pre hours trading data
+        print(AH.secure_all())
+        # Pandas DataFrame
 
-
-
-
-        >>> AH = AfterHours('aapl', typeof='pre')
-        >>> print(AH.getdata(datatype='lowprice'))
-                102.18
-
-        >>> print(AH.getdata(datatype='highprice'))
-            109.055
-
-        >>> print(AH.getdata(datatype='lowtime'))
-            '12/15/2017 18:58:46 PM'
-
-        >>> print(AH.getdata(datatype='hightime'))
-            '12/15/2017 19:58:46 PM'
-
-        >>> print(AH.secure_all())
-            Pandas DataFrame
-
-
-
-
+Please add any questions, comments, concerns to the issues tab on Github for the project! I look forward to seeing this package built out further in future releases. 
 
