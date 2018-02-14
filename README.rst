@@ -72,7 +72,7 @@ Alternative installation can be done by downloading the source files directly fr
 
         python setup.py install
 
-    .. note:: The source file can be downloaded here: https://github.com/datawrestler/after-hours/tarball/0.1.1
+    .. note:: The source file can be downloaded here: https://github.com/datawrestler/after-hours/tarball/0.2.1
 
 
 After installation, the package is ready for use. Simply import it into your python script with the following:
@@ -83,11 +83,13 @@ After installation, the package is ready for use. Simply import it into your pyt
 
 
 Examples
----------
+~~~~~~~~~~~~
 
 .. code-block:: python
 
         from afterhours.afterhours import AfterHours
+
+        # AFTER HOURS TRADING DATA
         AH = AfterHours('aapl', typeof = 'after')
 
         # get the low price from after hours trading
@@ -102,7 +104,6 @@ Examples
         print(AH.getdata(datatype='hightime'))
         # '12/15/2017 18:58:46 PM'
 
-
         print(AH.getdata(datatype='lowtime'))
         # '12/15/2017 19:58:46 PM'
 
@@ -110,8 +111,10 @@ Examples
         print(AH.secure_all())
         # Pandas DataFrame
 
+        # PRE HOURS TRADING DATA
         # get pre hours trading info for apple
         AH = AfterHours('aapl', typeof='pre')
+
         # get the low price from pre hours trading
         print(AH.getdata(datatype='lowprice'))
         # 102.18
@@ -132,5 +135,5 @@ Examples
         print(AH.secure_all())
         # Pandas DataFrame
 
-Please add any questions, comments, concerns to the issues tab on Github for the project! I look forward to seeing this package built out further in future releases. 
+Please add any questions, comments, concerns to the issues tab on Github for the project! I look forward to seeing this package built out further in future releases.
 
