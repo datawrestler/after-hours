@@ -6,7 +6,7 @@ import unittest
 
 try:
     import sys
-    sys.path.insert(0, "/home/travis/build/Data4Gov/WhiteBox_Production")
+    sys.path.insert(0, "/home/travis/build/datawrestler/after-hours")
     import afterhours.utils as utils
 except:
     import afterhours.utils as utils
