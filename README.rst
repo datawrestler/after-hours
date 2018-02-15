@@ -15,23 +15,33 @@
 
 
 ********************************
-Read me for afterhours module
+Read me for afterhours package
 ********************************
 
-Python module afterhours can retrieve pre-market prices and after-hours trading prices from Nasdaq for a given stock symbol
+Python module afterhours can retrieve pre-market and after-hours trading prices from Nasdaq for a given stock symbol
 
 -Created by Jason Lewris
 
 -License: The MIT License
 
--Developer Home Page: 'https://github.com/datawrestler'.
+-Developer Home Page: 'https://github.com/datawrestler'
 
 ----
 
 
-Requirements
---------------
-Python 2.7/3.4+
+Dependencies
+~~~~~~~~~~~~~~~
+- Python (>=2.6 or >= 3.5)
+- beautifulsoup4 (>= 4.6.0)
+- requests (>= 2.18.4)
+- pandas (>= 0.20.3)
+- lxml (>= 4.1.0)
+
+Valuable Links
+~~~~~~~~~~~~~~~~
+- Official source code repo: https://github.com/datawrestler/after-hours
+- Issue tracking: https://github.com/datawrestler/after-hours/issues
+- Download releases: https://pypi.python.org/pypi/afterhours
 
 Method Overview
 ----------------
@@ -68,7 +78,7 @@ Installation is done using pip install:
 
 Alternative installation can be done by downloading the source files directly from github, navigating to the directory through terminal and running the following:
 
-    .. code-block::
+    .. code-block:: python
 
         python setup.py install
 
@@ -77,9 +87,18 @@ Alternative installation can be done by downloading the source files directly fr
 
 After installation, the package is ready for use. Simply import it into your python script with the following:
 
-    .. code-block::
+    .. code-block:: python
 
         from afterhours.afterhours import AfterHours
+
+
+Source
+~~~~~~~~~~~~
+
+The latest source code can be checked out with the following command:
+
+    .. code-block::
+    git clone https://github.com/datawrestler/after-hours.git
 
 
 Examples
